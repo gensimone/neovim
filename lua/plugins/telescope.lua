@@ -11,9 +11,15 @@ return {
       vim.keymap.set('n', '<leader>fr', ':Telescope oldfiles<cr>')
       vim.keymap.set('n', '<leader>fc', ':Telescope find_files search_dirs={"~/.config/nvim"}<cr>')
       require('telescope').setup({
+        -- Available themes are:
+        --  dropdown
+        --  cursor
+        --  ivy
+        -- Set default theme
+        defaults = require('telescope.themes').get_ivy(),
         pickers = {
           find_files = {
-            hidden = true
+            hidden = false,
           }
         },
       })

@@ -7,8 +7,11 @@ return {
     config = function ()
       require('nvim-tree').setup({
         vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle<cr>'),
+        update_focused_file = {
+          enable = true
+        },
         filters = {
-          dotfiles = true,
+          dotfiles = false,
         },
         git = {
           enable = false,
