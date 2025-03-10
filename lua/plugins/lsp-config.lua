@@ -27,6 +27,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
+    vim.keymap.set('n', '<leader>ld', ':LspStop<cr>'),
+    vim.keymap.set('n', '<leader>le', ':LspStart<cr>'),
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
