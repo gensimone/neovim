@@ -24,7 +24,7 @@ return {
         autochdir = true,
         hide_numbers = true,
         terminal_mappings = true,
-        direction = 'horizontal', -- possible values: vertical, horizontal, tab, float.
+        direction = 'float', -- possible values: vertical, horizontal, tab, float.
         close_on_exit = true, -- close the terminal window when the process exits.
         float_opts = {
           -- The border key is *almost* the same as 'nvim_open_win'
