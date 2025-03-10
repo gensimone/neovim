@@ -5,7 +5,6 @@ return {
       vim.keymap.set('n', '<leader>fp', ':NeovimProjectDiscover<cr>'),
       projects = {
         "~/Sources/*",
-        "~/.config/*",
       },
       picker = {
         type = "telescope",

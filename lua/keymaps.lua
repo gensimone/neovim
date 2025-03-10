@@ -16,7 +16,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>q', ':q<cr>')
 
 -- Open a new file
-vim.keymap.set('n', '<leader>nf', ':ene | startinsert<cr>')
+vim.keymap.set('n', '<leader>fn', ':ene | startinsert<cr>')
 
 -- Resize window
 vim.keymap.set("n", "<C-Up>",    "<cmd>resize +2<cr>",          { desc = "Increase Window Height" })
