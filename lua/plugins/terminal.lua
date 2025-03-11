@@ -16,7 +16,7 @@ return {
       require('toggleterm').setup({
         size = function(term)
           if term.direction == "horizontal" then
-            return 15
+            return 25
           elseif term.direction == "vertical" then
             return vim.o.columns * 0.4
           end
@@ -24,7 +24,7 @@ return {
         autochdir = true,
         hide_numbers = true,
         terminal_mappings = true,
-        direction = 'float', -- possible values: vertical, horizontal, tab, float.
+        direction = 'horizontal', -- possible values: vertical, horizontal, tab, float.
         close_on_exit = true, -- close the terminal window when the process exits.
         float_opts = {
           -- The border key is *almost* the same as 'nvim_open_win'
