@@ -10,3 +10,9 @@ vim.opt.swapfile = false
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
+
+-- remove trailing whitespace
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
