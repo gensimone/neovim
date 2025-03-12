@@ -26,6 +26,26 @@ return {
 
             -- The concealer module converts verbose markup elements into beautified icons for your viewing pleasure.
             ["core.concealer"] = {},
+
+            ["core.journal"] = {
+              config = {
+                journal_folder = "~/Journal",
+                strategy = "nested",             -- nested example: (2022/03/02.norg)
+                template_name = "template.norg", -- not sure how to use it
+                use_template = true,             -- Whether to apply the template file to new journal entries.
+                toc_format = nil                 -- Formatter function used to generate the toc file.
+                                                 -- Receives a table that contains tables like { yy, mm, dd, link, title }
+              }
+            },
+
+            -- Manages Neorg workspaces
+            ["core.dirman"] = {
+              config = {
+                workspaces = {
+                  notes = "~/Notes",
+                },
+              }
+            },
         }
       })
     end
