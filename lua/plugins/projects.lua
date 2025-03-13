@@ -2,10 +2,9 @@ return {
   {
     "coffebar/neovim-project",
     opts = {
-      vim.keymap.set('n', '<leader>fp', ':NeovimProjectDiscover<cr>'),
-      projects = {
-        "~/Sources/*",
-      },
+      vim.keymap.set('n', '<leader>fp', ':NeovimProjectDiscover<cr>',   { desc = "Search Project" }),
+      vim.keymap.set('n', '<leader>rp', ':NeovimProjectLoadRecent<cr>', { desc = "Recent Project" }),
+      projects = {},
       picker = {
         type = "telescope",
       },

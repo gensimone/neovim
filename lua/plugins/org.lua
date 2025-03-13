@@ -4,6 +4,8 @@ return {
     lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
     version = "*", -- Pin Neorg to the latest stable release
     config = function ()
+      vim.keymap.set('n', '<leader>oj', ':Neorg journal custom<cr>',  { desc = "Org Journal" })
+      vim.keymap.set('n', '<leader>on', ':Neorg workspace notes<cr>', { desc = "Notes" })
       require("neorg").setup({
         load = {
             -- Neorg comes with some default modules that will be automatically loaded if you require the core.defaults module:
@@ -29,7 +31,7 @@ return {
 
             ["core.journal"] = {
               config = {
-                journal_folder = "~/Journal",
+                journal_folder = "Journal",
                 strategy = "nested",             -- nested example: (2022/03/02.norg)
                 template_name = "template.norg", -- not sure how to use it
                 use_template = true,             -- Whether to apply the template file to new journal entries.
@@ -42,7 +44,7 @@ return {
             ["core.dirman"] = {
               config = {
                 workspaces = {
-                  notes = "~/Notes",
+                  notes = "Notes",
                 },
               }
             },

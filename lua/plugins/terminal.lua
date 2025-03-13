@@ -12,7 +12,7 @@ return {
         vim.keymap.set('t', '<C-w>',      [[<C-\><C-n><C-w>]],   opts)
       end
       vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-      vim.keymap.set('n', '<leader>tt', ':ToggleTerm<cr>')
+      vim.keymap.set('n', '<leader>tt', ':ToggleTerm<cr>', { desc = "Toggle Term" })
       require('toggleterm').setup({
         size = function(term)
           if term.direction == "horizontal" then

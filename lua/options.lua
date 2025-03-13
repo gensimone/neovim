@@ -4,7 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = "'"
+vim.g.maplocalleader = ","
 vim.g.background = "light"
 
 vim.opt.swapfile = false
@@ -17,3 +17,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
 })
+

@@ -3,6 +3,7 @@ return {
     "hrsh7th/cmp-nvim-lsp"
   },
   {
+    -- Completion for paths
     "hrsh7th/cmp-path"
   },
   {
@@ -36,7 +37,7 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "render-markdown" },
+          -- { name = "render-markdown" },
           { name = "path" },
           { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.

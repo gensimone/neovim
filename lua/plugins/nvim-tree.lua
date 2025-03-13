@@ -6,18 +6,18 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function ()
       require('nvim-tree').setup({
-        vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle<cr>'),
+        vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle<cr>', { desc = "Toggle Tree" }),
         update_focused_file = {
           enable = true
         },
         filters = {
-          dotfiles = false,
+          dotfiles = true,
         },
         git = {
           enable = false,
         },
         view = {
-          width = 45,
+          width = 30,
           side = "left",
         },
         renderer = {

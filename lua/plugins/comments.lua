@@ -2,10 +2,8 @@ return {
   {
     'terrortylor/nvim-comment',
     config = function()
-      vim.keymap.set({'n', 'v'}, '<leader>/', ':CommentToggle<cr>')
-      vim.keymap.set({'n', 'v'}, '<leader>gcc', '<nop>')
-      vim.keymap.set({'n', 'v'}, '<leader>gc', '<nop>')
-      vim.keymap.set({'n', 'v'}, 'gcc', '<nop>')
+      vim.keymap.set({'n', 'v'}, '<leader>/', ':CommentToggle<cr>', { desc = "Comment Toggle" })
+      vim.keymap.del({'n', 'v'}, 'gc' )
       require('nvim_comment').setup({
         create_mappings = false
       })
@@ -16,7 +14,7 @@ return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
-      vim.keymap.set('n', '<leader>ft', ':TodoTelescope<cr>'),
+      vim.keymap.set('n', '<leader>ft', ':TodoTelescope<cr>', { desc = "Todos" }),
       -- show icons in the signs column
       signs = true,
       -- sign priority
@@ -34,7 +32,7 @@ return {
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        TEST = { icon = " ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
       gui_style = {
         fg = "NONE", -- The gui style to use for the fg highlight group.
