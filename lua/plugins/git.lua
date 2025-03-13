@@ -1,16 +1,18 @@
 return {
   {
     'lewis6991/gitsigns.nvim',
-    config = function ()
-      vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<cr>',        { desc = "Git blame" })
-      vim.keymap.set('n', '<leader>gd', ':Gitsigns diffthis<cr>',     { desc = "Git diff" })
-      vim.keymap.set('n', '<leader>hl', ':Gitsigns setloclist<cr>',   { desc = "List Hunks" })
 
-      vim.keymap.set('n',        '<leader>hp', ':Gitsigns preview_hunk_inline<cr>', { desc = "Preview hunk" })
-      vim.keymap.set({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<cr>',          { desc = "Reset hunk" })
-      vim.keymap.set({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<cr>',          { desc = "Stage hunk" })
-      -- vim.keymap.set({'n', 'v'}, '<leader>np', ':Gitsigns prev_hunk<cr>',    { desc = "Previous hunk" })
-      -- vim.keymap.set({'n', 'v'}, '<leader>hn', ':Gitsigns next_hunk<cr>',   { desc = "Next hunk" })
+    keys = {
+      { '<leader>gb', ':Gitsigns blame<cr>',    mode = { 'n' }, desc = 'Git blame' },
+      { '<leader>gd', ':Gitsigns diffthis<cr>', mode = { 'n' }, desc = 'Git diff' },
+      { '<leader>hl', ':Gitsigns setloclist<cr>',          mode = { 'n' }, desc = 'List Hunks' },
+      { '<leader>hp', ':Gitsigns preview_hunk_inline<cr>', mode = { 'n' }, desc = 'Preview hunk' },
+      { '<leader>hr', ':Gitsigns reset_hunk<cr>',          mode = { 'n' }, desc = 'Reset hunk' },
+      { '<leader>hs', ':Gitsigns stage_hunk<cr>',          mode = { 'n' }, desc = 'Stage hunk' },
+      { '<leader>hu', ':Gitsigns undo_stage_hunk<cr>',     mode = { 'n' }, desc = 'Unstage hunk' },
+    },
+
+    config = function ()
       require('gitsigns').setup {
         signs = {
           add          = { text = '┃' },

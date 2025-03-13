@@ -27,8 +27,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
-    vim.keymap.set('n', '<leader>ld', ':LspStop<cr>',  { desc = "Disable LSP" }),
-    vim.keymap.set('n', '<leader>le', ':LspStart<cr>', { desc = "Enable LSP" }),
+    keys = {
+      { '<leader>ld', ':LspStop<cr>',  mode = { 'n' }, desc = 'Disable LSP' },
+      { '<leader>le', ':LspStart<cr>', mode = { 'n' }, desc = 'Enable LSP' },
+    },
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")

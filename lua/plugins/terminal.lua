@@ -1,6 +1,9 @@
 return {
   {
     'akinsho/toggleterm.nvim',
+    keys = {
+      { '<leader>tt', ':ToggleTerm<cr>', mode = { 'n' }, desc = "Toggle Term" },
+    },
     config = function()
       function _G.set_terminal_keymaps()
         local opts = {buffer = 0}
@@ -12,7 +15,6 @@ return {
         vim.keymap.set('t', '<C-w>',      [[<C-\><C-n><C-w>]],   opts)
       end
       vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-      vim.keymap.set('n', '<leader>tt', ':ToggleTerm<cr>', { desc = "Toggle Term" })
       require('toggleterm').setup({
         size = function(term)
           if term.direction == "horizontal" then
